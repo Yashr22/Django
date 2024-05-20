@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal List</title>
+    <style>
+        /* styles.css */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Garamond, serif;
+            background-color: #f0f0f0;
+            background-image: url('https://i.pinimg.com/736x/e4/0a/de/e40ade3377849dce4d0352c90f60f388.jpg');
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            height: 100vh; /* Ensure the body takes up the full viewport height */
+            width: 100vw; /* Ensure the body takes up the full viewport width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px; /* Increased width to 1200px */
+            width: 80%; /* Ensure the container takes full width of max-width */
+            margin: 20px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adding transparency */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url('https://i.pinimg.com/474x/87/21/9b/87219b2ba47b4fe944182f36215cfde2.jpg'); /* Adding background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 2s forwards; /* Fade-in animation */
+        }
+
+        h1 {
+            text-align: center;
+            opacity: 0;
+            animation: slideIn 1s forwards 0.5s; /* Slide-in animation with delay */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Start hidden */
+            transform: translateY(30px); /* Start slightly below */
+            animation: slideUp 0.5s forwards; /* Slide-up animation */
+        }
+
+        li:nth-child(1) { animation-delay: 0.5s; }
+        li:nth-child(2) { animation-delay: 0.6s; }
+        li:nth-child(3) { animation-delay: 0.7s; }
+        li:nth-child(4) { animation-delay: 0.8s; }
+        li:nth-child(5) { animation-delay: 0.9s; }
+        /* Add more delays if there are more list items */
+
+        .note-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .note-content {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .note-meta {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .note-actions {
+            margin-top: 10px;
+        }
+
+        .note-actions button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3c926e;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s;
+        }
+
+        .note-actions button:hover {
+            background-color: #87ecb6;
+            transform: scale(1.05);
+        }
+
+        .note-actions form {
+            display: inline;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'service' %}"><button>Back</button></a>
+        <h1>Journal</h1>
+        <a href="{% url 'create_note' %}"><button>Create Journal</button></a>
+        <ul>
+            {% for note in notes %}
+                <li>
+                    <h2 class="note-title">{{ note.title }}</h2>
+                    <p class="note-content">{{ note.content }}</p>
+                    <p class="note-meta">Created at: {{ note.created_at }}</p>
+                    <p class="note-meta">Last updated: {{ note.updated_at }}</p>
+                    <div class="note-actions">
+                        <a href="{% url 'update_note' note.id %}"><button>Edit</button></a>
+                        <form action="{% url 'delete_note' note.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                </li>
+            {% empty %}
+                <li>No notes available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

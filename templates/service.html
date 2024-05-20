@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    /* Custom CSS for Service page */
+    .service-section {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .service-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 280px;
+        transition: transform 0.3s ease;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card img {
+        width: 150px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+        transform: scale(1.1);
+    }
+
+    .card-content {
+        margin-top: 20px;
+    }
+
+    .service-button {
+        background-color: #3c775d;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .service-button:hover {
+        background-color: #2d6349;
+        transform: translateY(-3px);
+    }
+
+    .service-description {
+        margin-top: 40px;
+    }
+
+    .service-description p {
+        font-size: 1.2em;
+        color: #555;
+    }
+</style>
+
+<section class="service-section">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="service-buttons">
+            <div class="card">
+                <img src="https://i.pinimg.com/474x/8b/bd/92/8bbd921302b5548feb88a259ad2d70bf.jpg" alt="Notes Image"> <!-- Replace the URL with the actual image URL -->
+                <a href="{% url 'note_list' %}" class="btn service-button">Journal</a>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/474x/c4/17/09/c41709926b5957ee80d2f2232e7b8032.jpg" alt="Chatbot Image"> <!-- Replace the URL with the actual image URL -->
+                <a href="{% url 'chatbot' %}" class="btn service-button">Chatbot</a>
+            </div>
+        </div>
+        <div class="service-description">
+            <p>Click on the buttons above to explore our new pages.</p>
+        </div>
+    </div>
+</section>
+{% endblock body %}

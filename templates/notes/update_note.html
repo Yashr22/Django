@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Journal</title>
+    <style>
+        /* CSS styles */
+       body {
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, serif;
+    background-color: #f0f0f0;
+    background-image: url('https://i.pinimg.com/736x/e4/0a/de/e40ade3377849dce4d0352c90f60f388.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 90vh; /* Ensure the body takes up the full viewport height */
+    width: 100vw; /* Ensure the body takes up the full viewport width */
+}
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #6d8e81;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto; /* Ensure contents don't overflow */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: calc(100% - 22px); /* Adjusted width to account for padding and border */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'note_list' %}"><button>Back</button></a>
+        <h1>Update Journal</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_title">Title:</label><br>
+            <input type="text" id="id_title" name="title" value="{{ note.title }}"><br>
+            <label for="id_content">Content:</label><br>
+            <textarea id="id_content" name="content">{{ note.content }}</textarea><br>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Journal</title>
+    <style>
+        /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.note-content {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.note-meta {
+    font-size: 14px;
+    color: #999;
+}
+
+.note-actions {
+    margin-top: 10px;
+}
+
+.note-actions button {
+    margin-right: 10px;
+}
+
+.note-actions button:last-child {
+    margin-right: 0;
+}
+
+    </style>
+
+</head>
+<body>
+    <h1>Delete Journal</h1>
+    <p>Are you sure you want to delete the Journal "{{ note.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+        <a href="{% url 'note_list' %}"><button type="button">Cancel</button></a>
+    </form>
+</body>
+</html>

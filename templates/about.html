@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Xenixation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Montserrat;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5em;
+            color: #3c926e; /* Green color */
+            animation: slideInFromLeft 1s ease-in-out;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            width: 45%;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .card img {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.8em;
+            color: #3c926e; /* Green color */
+            border-bottom: 2px solid #3c926e; /* Green color */
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #3c926e; /* Green color */
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>About Xenixation</h1>
+        </header>
+        <section class="intro">
+            <p>Welcome to <strong>Xenixation</strong>, your personal space for journaling and intelligent conversations. Our app combines the power of a traditional journal with a smart chatbot to enhance your mental well-being and productivity.</p>
+        </section>
+        <section class="features">
+            <div class="feature card">
+                <img src="https://i.pinimg.com/474x/8b/bd/92/8bbd921302b5548feb88a259ad2d70bf.jpg" alt="Inbuilt Journal">
+                <div class="card-content">
+                    <h2>Inbuilt Journal</h2>
+                    <p>Our inbuilt journal allows you to record your thoughts, track your progress, and reflect on your day. With a user-friendly interface, journaling becomes a seamless part of your daily routine.</p>
+                </div>
+            </div>
+            <div class="feature card">
+                <img src="https://i.pinimg.com/474x/c4/17/09/c41709926b5957ee80d2f2232e7b8032.jpg" alt="Smart Chatbot">
+                <div class="card-content">
+                    <h2>Smart Chatbot</h2>
+                    <p>The Xenixation chatbot is designed to offer support, provide insights, and engage in meaningful conversations. Whether you need advice, a sounding board, or just someone to talk to, our chatbot is here for you.</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2024 Xenixation. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+{% endblock body %}

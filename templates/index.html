@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for Xenization heading */
+        @font-face {
+            font-family: 'Elegant Serifs';
+            src: url('/path/to/Elegant-Serifs-Regular.woff2') format('woff2'), /* Update path */
+                 url('/path/to/Elegant-Serifs-Regular.woff') format('woff'); /* Update path */
+            font-weight: bold; /* Set font weight to bold */
+            font-style: normal;
+        }
+        
+        .xenization-heading {
+            font-family: 'Elegant Serifs', serif; /* Use Elegant Serifs font */
+            font-size: 80px; /* Adjust the font size */
+            color: #1b432e; /* Specify your preferred color */
+            text-transform: uppercase; /* Convert text to uppercase */
+            text-align: center; /* Center align the heading */
+        }
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, serif;
+    background-color: #f0f0f0;
+    background-image: url('https://i.pinimg.com/736x/e4/0a/de/e40ade3377849dce4d0352c90f60f388.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 90vh; /* Ensure the body takes up the full viewport height */
+    width: 100vw; /* Ensure the body takes up the full viewport width */
+}
+
+        /* Styles for the header paragraph */
+        header p {
+            font-size: 28px; /* Adjust the font size */
+            text-align: center; /* Center align the paragraph */
+            color: #30674c; /* Change the color */
+            margin-top: 10px; /* Add some top margin */
+        }
+
+        /* Style for the image links */
+        .img-fluid {
+            border-radius: 10px; /* Add border radius */
+            margin-bottom: 20px; /* Add bottom margin */
+            transition: transform 0.3s ease; /* Add smooth transition */
+        }
+
+        .img-fluid:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="#">Xenization</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/service">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/account">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1 class="xenization-heading">Xenization</h1>
+        <p>Art of existing as a stranger</p>
+    </header>
+    
+    <div class="container">
+        <div class="row mt-5"> <!-- Added top margin of 5 -->
+            <div class="col-md-3">
+                <a href="new_page"><img src="https://i.pinimg.com/564x/5a/df/c6/5adfc6872a1068a986b7dd6aeb479c2c.jpg" class="img-fluid" alt="Image 1"></a>
+            </div>
+            <div class="col-md-3">
+                <a href="new_page2"><img src="https://i.pinimg.com/564x/15/64/57/15645753540804ed85ed5d70d8b3229d.jpg" class="img-fluid" alt="Image 2"></a>
+            </div>
+            <div class="col-md-3">
+                <img src="https://i.pinimg.com/564x/3d/cf/f0/3dcff074d6ce95d17338259eef3d3ab7.jpg" class="img-fluid" alt="Image 3">
+            </div>
+            <div class="col-md-3">
+                <img src="https://i.pinimg.com/564x/fd/8b/fc/fd8bfcaa01e1ef3232ccc7e6ab971af5.jpg" class="img-fluid" alt="Image 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

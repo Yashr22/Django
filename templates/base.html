@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for Xenization heading */
+        @font-face {
+            font-family: 'Elegant Serifs';
+            src: url('/path/to/Elegant-Serifs-Regular.woff2') format('woff2'), /* Update path */
+                 url('/path/to/Elegant-Serifs-Regular.woff') format('woff'); /* Update path */
+                 font-weight: bold; /* Set font weight to bold */
+            font-style: normal;
+        }
+        
+        .xenization-heading {
+            font-family: 'Elegant Serifs', serif; /* Use Elegant Serifs font */
+            font-size: 80px; /* Adjust the font size */
+            color: #333; /* Specify your preferred color */
+            text-transform: uppercase; /* Convert text to uppercase */
+        }
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, serif;
+    background-color: #f0f0f0;
+    background-image: url('https://i.pinimg.com/736x/e4/0a/de/e40ade3377849dce4d0352c90f60f388.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 90vh; /* Ensure the body takes up the full viewport height */
+    width: 100vw; /* Ensure the body takes up the full viewport width */
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="#">Xenization</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/service">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/account">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {%block body%}  {%endblock body%}
+
+    <!-- Xenization Heading -->
+
+    <!-- Your content goes here -->
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    /* Custom CSS for Account page */
+    .account-section {
+        /* background-color: #f8f9fa; */
+        padding: 50px 0;
+    }
+
+    .account-info {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .account-info h2 {
+        margin-bottom: 20px;
+    }
+
+    .account-info p {
+        margin-bottom: 10px;
+    }
+
+    .btn-account {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-account:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<section class="account-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="account-info">
+                    <h2>Welcome Shreya</h2>
+                    <p>Username: Shreya Sinha</p>
+                    <p>Email: Shreyas.bsc22@rvu.edu.in</p>
+                    <p>Member Since: May 15, 2024</p>
+                    <a href="{% url 'login' %}" class="btn btn-account">logout</a>
+                    <!-- <a href="#" class="btn btn-logout">logout</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}
